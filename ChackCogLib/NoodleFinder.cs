@@ -9,7 +9,7 @@ namespace ChackCogLib
 {
     public class NoodleFinder
     {
-        protected static string predictionURL = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/5487c67b-7cee-4f68-8cf2-3027c939eb66/url?iterationId=3798ed34-4f42-43f0-b7c9-d506b0630410";
+        protected const string PredictionURL = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/5487c67b-7cee-4f68-8cf2-3027c939eb66/url?iterationId=3798ed34-4f42-43f0-b7c9-d506b0630410";
 
         public static async Task<Prediction> Noodle(Uri imageUrl)
         {
@@ -18,7 +18,7 @@ namespace ChackCogLib
                 var postData = "{\"Url\": \"" + imageUrl.ToString() + "\"}";
                 StringContent content = new StringContent(postData, Encoding.UTF8, "application/json");
                 client.DefaultRequestHeaders.Add("Prediction-Key", Environment.GetEnvironmentVariable("Noodle_Prediction_Key"));
-                var httpResponse = await client.PostAsync(predictionURL, content);
+                var httpResponse = await client.PostAsync(PredictionURL, content);
 
                 if (httpResponse.StatusCode == HttpStatusCode.OK)
                 {

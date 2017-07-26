@@ -6,6 +6,7 @@
     <Authors>Akira "Chack" Inoue</Authors>
     <Company>Microsoft</Company>
     <Description>ChackCogLib is a wrapper library for Cognitive Services build on .NET Standard 2.0</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

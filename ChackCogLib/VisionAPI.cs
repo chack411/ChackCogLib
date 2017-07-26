@@ -12,7 +12,7 @@ namespace ChackCogLib
 {
     public class Vision
     {
-        protected static string vision_Ocr_Url = "https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr";
+        protected const string VisionOcrUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr";
 
         public enum ResultFormat { Text, Json };
 
@@ -44,7 +44,7 @@ namespace ChackCogLib
 
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
 
-                var httpResponse = await client.PostAsync(vision_Ocr_Url, content);
+                var httpResponse = await client.PostAsync(VisionOcrUrl, content);
                 if (httpResponse.StatusCode == HttpStatusCode.OK)
                 {
                     string result = await httpResponse.Content.ReadAsStringAsync();
@@ -56,7 +56,7 @@ namespace ChackCogLib
 
         protected static string ConvertToText(string jsonData)
         {
-            string ocrResult = "";
+            var ocrResult = new StringBuilder();
 
             OcrData ocrData = JsonConvert.DeserializeObject<OcrData>(jsonData);
             foreach (Region region in ocrData.Regions)
@@ -65,15 +65,15 @@ namespace ChackCogLib
                 {
                     foreach (Word word in line.Words)
                     {
-                        ocrResult += word.Text;
+                        ocrResult.Append(word.Text);
                         if (ocrData.Language != "ja")
-                            ocrResult += " ";
+                            ocrResult.Append(" ");
                     }
-                    ocrResult += "\n";
+                    ocrResult.Append("\n");
                 }
             }
 
-            return ocrResult;
+            return ocrResult.ToString();
         }
     }
 
