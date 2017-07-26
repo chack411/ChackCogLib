@@ -19,9 +19,9 @@ ChackCogLib is a wrapper library for Cognitive Services build on .NET Standard 2
 ## Reference Video in Japanese:
 
 * You can see the session video on the Channel 9 as a reference:<br/>
-[.NET 15 周年の今こそ考えるクラウドネイティブ アプリケーションと .NET の活用 (Comming soon)](https://channel9.msdn.com/Events/de-code/2017/TL04)
+[.NET 15 周年の今こそ考えるクラウドネイティブ アプリケーションと .NET の活用](https://channel9.msdn.com/Events/de-code/2017/TL04)
 
 Have fun!<br/>
-Akira "chack" Inoue.
+Akira "Chack" Inoue.
 
 *This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.*
