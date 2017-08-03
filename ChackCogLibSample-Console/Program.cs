@@ -55,13 +55,16 @@ namespace ChackCogLibSample_Console
                 // 2) Add environment variable "Vision_API_Subscription_Key" and set Computer vision key as value
                 //    e.g. Vision_API_Subscription_Key=123456789abcdefghijklmnopqrstuvw
 
-                Task<string> task = Task.Run(() => Vision.Ocr(image));
+                Task<string> task = Task.Run(() => Vision.Analyze(image));
                 task.Wait();
 
                 Console.WriteLine();
                 Console.WriteLine("OCR Result:");
                 Console.WriteLine(task.Result);
                 Console.WriteLine();
+
+                var analyze = new Vision();
+                var result = analyze.AnalyzeImage(image);
 
                 return true;
             }

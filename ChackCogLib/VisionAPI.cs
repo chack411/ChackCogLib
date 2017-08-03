@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace ChackCogLib
 {
-    public class Vision
+    public partial class Vision
     {
         protected const string VisionOcrUrl = "https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr";
 

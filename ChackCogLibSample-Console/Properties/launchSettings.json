@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ChackCogLibSample-Console": {
+      "commandName": "Project",
+      "commandLineArgs": "https://chack.blob.core.windows.net/images/b2.jpg"
+    }
+  }
+}
